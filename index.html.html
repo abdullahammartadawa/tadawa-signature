@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tadawa Email Signature Setup</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7f8;
+    margin: 0;
+    padding: 30px 20px;
+    color: #1F2937;
+    line-height: 1.5;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .header {
+    background: linear-gradient(135deg, #0E5A66 0%, #1A8A9A 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+  }
+  .header h1 { margin: 0 0 8px 0; font-size: 26px; }
+  .header p { margin: 0; opacity: 0.95; font-size: 14px; }
+
+  .card {
+    background: white;
+    padding: 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+  .card.last { border-radius: 0 0 10px 10px; }
+
+  h2 {
+    color: #0E5A66;
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1A8A9A;
+  }
+
+  .preview {
+    background: #fafafa;
+    border: 1px dashed #cbd5d6;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+  }
+
+  .copy-button {
+    display: block;
+    width: 100%;
+    background: #1A8A9A;
+    color: white;
+    border: none;
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 8px;
+  }
+  .copy-button:hover { background: #0E5A66; transform: translateY(-1px); }
+  .copy-button.copied { background: #2e7d32; }
+  .copy-button .icon { display: inline-block; margin-right: 8px; }
+
+  .hint {
+    text-align: center;
+    color: #6B7280;
+    font-size: 13px;
+    margin: 0 0 16px 0;
+  }
+
+  ol { padding-left: 24px; margin: 0; }
+  ol li { margin-bottom: 12px; }
+  ol li strong { color: #0E5A66; }
+
+  .alert {
+    background: #fff8e1;
+    border-left: 4px solid #f9a825;
+    padding: 14px 16px;
+    border-radius: 4px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .alert strong { color: #B26A00; }
+
+  .alert.red {
+    background: #ffebee;
+    border-left-color: #c62828;
+  }
+  .alert.red strong { color: #c62828; }
+
+  code {
+    background: #eef3f4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #0E5A66;
+  }
+
+  .footer {
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    margin-top: 24px;
+  }
+
+  /* Hidden textarea holding the actual code */
+  #signatureCode { position: absolute; left: -9999px; opacity: 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Tadawa Email Signature</h1>
+    <p>Click the button, then paste it into Zoho Mail. Takes 2 minutes.</p>
+  </div>
+
+  <div class="card">
+    <h2>Step 1 — Copy the code</h2>
+    <button class="copy-button" id="copyBtn" onclick="copyCode()">
+      <span class="icon">📋</span><span id="btnText">Copy Signature Code</span>
+    </button>
+    <p class="hint">The signature code will be copied to your clipboard.</p>
+  </div>
+
+  <div class="card last">
+    <h2>Step 2 — Paste into Zoho Mail</h2>
+
+    <ol>
+      <li>Open <strong>Zoho Mail</strong> in your browser (mail.zoho.com).</li>
+      <li>Click the <strong>gear icon</strong> (top right) → <strong>Settings</strong>.</li>
+      <li>Go to <strong>Mail</strong> → <strong>Signatures</strong> → click <strong>+ Add Signature</strong>.</li>
+      <li>Name it <strong>"Tadawa"</strong>.</li>
+      <li>In the signature editor toolbar, click the <code>&lt; &gt;</code> button (Source / HTML view).</li>
+      <li>Press <strong>Ctrl+V</strong> to paste.</li>
+      <li>Click the <code>&lt; &gt;</code> button again to return to normal view — you should see the logo and signature.</li>
+      <li>Replace <strong>[NAME]</strong>, <strong>[JOB TITLE]</strong>, and <strong>[PHONE]</strong> with your details.</li>
+      <li>Below the editor, tick BOTH:
+        <ul>
+          <li>✅ Set as default for new emails</li>
+          <li>✅ Use for reply / forward</li>
+        </ul>
+      </li>
+      <li>Click <strong>Save</strong>. Send yourself a test email to confirm it works.</li>
+    </ol>
+
+    <div class="alert red">
+      <strong>Critical:</strong> You MUST paste into the HTML/Source view (the <code>&lt; &gt;</code> button). If you paste into the normal editor, the signature will not work.
+    </div>
+
+    <div class="alert">
+      <strong>Forgetting "Use for reply/forward"?</strong> Your signature won't appear on replies — only brand new emails. Tick BOTH checkboxes.
+    </div>
+  </div>
+
+  <p class="footer">Tadawa · Internal Signature Setup · v2.0 · Questions? Contact IT Support.</p>
+
+</div>
+
+<!-- THE ACTUAL HTML CODE TO BE COPIED -->
+<textarea id="signatureCode">&lt;table cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px; max-width:600px; border-collapse:collapse; font-family:Arial, Helvetica, sans-serif;"&gt;
+  &lt;tr&gt;
+    &lt;td width="170" valign="middle" style="width:170px; padding:6px 12px 6px 0; border-right:3px solid #1A8A9A; text-align:center;"&gt;
+      &lt;img src="/zm/ImageSignature?fileName=1779366638829000_965331625.png&amp;amp;accountId=4180781000000008002&amp;amp;storeName=923898116&amp;amp;frm=s"
+           alt="Tadawa"
+           width="130"
+           height="auto"
+           style="display:block; width:130px; max-width:130px; height:auto; border:0; margin:0 auto;"&gt;
+    &lt;/td&gt;
+    &lt;td width="430" valign="middle" style="width:430px; padding:6px 0 6px 12px; font-family:Arial, Helvetica, sans-serif;"&gt;
+
+      &lt;p style="margin:0 0 2px 0; font-family:Arial, Helvetica, sans-serif;"&gt;
+        &lt;b&gt;&lt;span style="color:#1F2937; font-size:15pt;"&gt;[NAME]&lt;/span&gt;&lt;/b&gt;
+      &lt;/p&gt;
+
+      &lt;p style="margin:0 0 8px 0; font-family:Arial, Helvetica, sans-serif;"&gt;
+        &lt;i&gt;&lt;span style="color:#0E5A66; font-size:10pt;"&gt;[JOB TITLE]&lt;/span&gt;&lt;/i&gt;
+      &lt;/p&gt;
+
+      &lt;p style="margin:0 0 2px 0; font-family:Arial, Helvetica, sans-serif;"&gt;
+        &lt;img src="/zm/ImageSignature?fileName=1779366638835018_965331625.png&amp;amp;accountId=4180781000000008002&amp;amp;storeName=923898116&amp;amp;frm=s"
+             alt=""
+             width="14"
+             height="14"
+             style="display:inline-block; width:14px; height:14px; vertical-align:middle; border:0;"&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#333333; font-size:10pt;"&gt;[PHONE]&lt;/span&gt;
+      &lt;/p&gt;
+
+      &lt;p style="margin:0 0 2px 0; font-family:Arial, Helvetica, sans-serif;"&gt;
+        &lt;img src="/zm/ImageSignature?fileName=1779366638836037_965331625.png&amp;amp;accountId=4180781000000008002&amp;amp;storeName=923898116&amp;amp;frm=s"
+             alt=""
+             width="14"
+             height="14"
+             style="display:inline-block; width:14px; height:14px; vertical-align:middle; border:0;"&gt;
+        &amp;nbsp;&amp;nbsp;&lt;a href="http://www.tadawa.com" target="_blank" style="color:#1F2937; font-size:10pt; text-decoration:none;"&gt;www.tadawa.com&lt;/a&gt;
+      &lt;/p&gt;
+
+      &lt;p style="margin:0 0 8px 0; font-family:Arial, Helvetica, sans-serif;"&gt;
+        &lt;img src="/zm/ImageSignature?fileName=1779366638962000_965331625.png&amp;amp;accountId=4180781000000008002&amp;amp;storeName=923898116&amp;amp;frm=s"
+             alt=""
+             width="14"
+             height="14"
+             style="display:inline-block; width:14px; height:14px; vertical-align:middle; border:0;"&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a href="https://maps.app.goo.gl/Hxp2qMzQguvSq8Sp6" target="_blank" style="color:#333333; font-size:10pt; text-decoration:none;"&gt;Maggie Complex, Ibn Khaldoun street, 2nd floor 19, Amman&lt;/a&gt;
+      &lt;/p&gt;
+
+      &lt;p style="margin:0; font-family:Arial, Helvetica, sans-serif;"&gt;
+        &lt;span style="color:#6B7280; font-size:9pt;"&gt;Download the app:&lt;/span&gt;
+        &lt;a href="https://apps.apple.com/jo/app/tadawa/id6502606935" target="_blank" style="color:#1A8A9A; font-size:9pt; text-decoration:none;"&gt;&lt;b&gt;App Store&lt;/b&gt;&lt;/a&gt;
+        &lt;b&gt;&lt;span style="color:#1A8A9A; font-size:9pt;"&gt;&amp;nbsp;&amp;bull;&amp;nbsp;&lt;/span&gt;&lt;/b&gt;
+        &lt;a href="https://play.google.com/store/apps/details?id=com.tadawa_mobile2&amp;amp;pcampaignid=web_share" target="_blank" style="color:#1A8A9A; font-size:9pt; text-decoration:none;"&gt;&lt;b&gt;Google Play&lt;/b&gt;&lt;/a&gt;
+      &lt;/p&gt;
+
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</textarea>
+
+<script>
+function copyCode() {
+  const textarea = document.getElementById('signatureCode');
+  // Decode HTML entities to get raw HTML
+  const decoded = textarea.value
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;amp;/g, '&amp;')
+    .replace(/&amp;nbsp;/g, '&nbsp;')
+    .replace(/&amp;bull;/g, '&bull;')
+    .replace(/&amp;/g, '&');
+
+  // Try modern clipboard API first
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(decoded).then(showCopied, fallbackCopy);
+  } else {
+    fallbackCopy();
+  }
+
+  function fallbackCopy() {
+    // Old-school fallback for older browsers
+    const temp = document.createElement('textarea');
+    temp.value = decoded;
+    temp.style.position = 'fixed';
+    temp.style.left = '-9999px';
+    document.body.appendChild(temp);
+    temp.select();
+    try {
+      document.execCommand('copy');
+      showCopied();
+    } catch (e) {
+      alert('Could not copy automatically. Please contact IT Support.');
+    }
+    document.body.removeChild(temp);
+  }
+
+  function showCopied() {
+    const btn = document.getElementById('copyBtn');
+    const txt = document.getElementById('btnText');
+    btn.classList.add('copied');
+    txt.textContent = '✓ Copied! Now paste it in Zoho Mail';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      txt.textContent = 'Copy Signature Code';
+    }, 4000);
+  }
+}
+</script>
+
+</body>
+</html>
