@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tadawa Email Signature Setup</title>
+<title>تداوي - التوقيع الموحد</title>
 <style>
   * { box-sizing: border-box; }
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
     background: #f5f7f8;
     margin: 0;
     padding: 30px 20px;
     color: #1F2937;
-    line-height: 1.5;
+    line-height: 1.7;
+    direction: rtl;
   }
   .container {
     max-width: 760px;
@@ -52,7 +53,7 @@
     padding: 18px 24px;
     font-size: 16px;
     font-weight: bold;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s;
@@ -60,7 +61,7 @@
   }
   .copy-button:hover { background: #0E5A66; transform: translateY(-1px); }
   .copy-button.copied { background: #2e7d32; }
-  .copy-button .icon { display: inline-block; margin-right: 8px; }
+  .copy-button .icon { display: inline-block; margin-left: 8px; }
 
   .hint {
     text-align: center;
@@ -69,13 +70,15 @@
     margin: 0 0 16px 0;
   }
 
-  ol { padding-left: 24px; margin: 0; }
+  ol { padding-right: 24px; padding-left: 0; margin: 0; }
   ol li { margin-bottom: 12px; }
   ol li strong { color: #0E5A66; }
+  ul { padding-right: 24px; padding-left: 0; }
 
   .alert {
     background: #fff8e1;
-    border-left: 4px solid #f9a825;
+    border-right: 4px solid #f9a825;
+    border-left: none;
     padding: 14px 16px;
     border-radius: 4px;
     margin: 16px 0;
@@ -85,7 +88,7 @@
 
   .alert.red {
     background: #ffebee;
-    border-left-color: #c62828;
+    border-right-color: #c62828;
   }
   .alert.red strong { color: #c62828; }
 
@@ -96,7 +99,11 @@
     font-family: 'Courier New', monospace;
     font-size: 13px;
     color: #0E5A66;
+    direction: ltr;
+    display: inline-block;
   }
+
+  .ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
 
   .footer {
     text-align: center;
@@ -105,60 +112,71 @@
     margin-top: 24px;
   }
 
+  .lang-switch {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .lang-switch a {
+    color: #1A8A9A;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .lang-switch a:hover { text-decoration: underline; }
+
   #signatureCode { position: absolute; left: -9999px; opacity: 0; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <div style="text-align:center; margin-bottom:16px;">
-    <a href="index-ar.html" style="color:#1A8A9A; text-decoration:none; font-size:13px; font-weight:bold;">→ النسخة العربية</a>
+  <div class="lang-switch">
+    <a href="universal.html">English version ←</a>
   </div>
 
   <div class="header">
-    <h1>Tadawa Email Signature</h1>
-    <p>Click the button, then paste it into Zoho Mail. Takes 2 minutes.</p>
+    <h1>التوقيع الموحد لتداوي</h1>
+    <p>توقيع الشركة العام — للحسابات المشتركة والعامة</p>
   </div>
 
   <div class="card">
-    <h2>Step 1 — Copy the code</h2>
+    <h2>الخطوة الأولى — نسخ الكود</h2>
     <button class="copy-button" id="copyBtn" onclick="copyCode()">
-      <span class="icon">📋</span><span id="btnText">Copy Signature Code</span>
+      <span class="icon">📋</span><span id="btnText">نسخ كود التوقيع</span>
     </button>
-    <p class="hint">The signature code will be copied to your clipboard.</p>
+    <p class="hint">سيتم نسخ كود التوقيع إلى الحافظة</p>
   </div>
 
   <div class="card last">
-    <h2>Step 2 — Paste into Zoho Mail</h2>
+    <h2>الخطوة الثانية — اللصق في Zoho Mail</h2>
 
     <ol>
-      <li>Open <strong>Zoho Mail</strong> in your browser (mail.zoho.com).</li>
-      <li>Click the <strong>gear icon</strong> (top right) → <strong>Settings</strong>.</li>
-      <li>Go to <strong>Mail</strong> → <strong>Signatures</strong> → click <strong>+ Add Signature</strong>.</li>
-      <li>Name it <strong>"Tadawa"</strong>.</li>
-      <li>In the signature editor toolbar, click the <code>&lt; &gt;</code> button (Source / HTML view).</li>
-      <li>Press <strong>Ctrl+V</strong> to paste.</li>
-      <li>Click the <code>&lt; &gt;</code> button again to return to normal view — you should see the logo and signature.</li>
-      <li>Replace <strong>[NAME]</strong>, <strong>[JOB TITLE]</strong>, and <strong>[PHONE]</strong> with your details.</li>
-      <li>Below the editor, tick BOTH:
+      <li>افتح <strong>Zoho Mail</strong> في المتصفح <span class="ltr">(mail.zoho.com)</span>.</li>
+      <li>اضغط على <strong>أيقونة الترس</strong> (أعلى اليمين) ← <strong>الإعدادات</strong> (Settings).</li>
+      <li>اذهب إلى <strong>Mail</strong> ← <strong>Signatures</strong> ← اضغط <strong>+ Add Signature</strong>.</li>
+      <li>سمّ التوقيع <strong>"Tadawa Universal"</strong>.</li>
+      <li>في شريط أدوات محرر التوقيع، اضغط على زر <code>&lt; &gt;</code> (عرض المصدر / HTML).</li>
+      <li>اضغط <strong>Ctrl+V</strong> للصق.</li>
+      <li>اضغط على زر <code>&lt; &gt;</code> مرة أخرى للعودة إلى العرض العادي — يجب أن يظهر الشعار والتوقيع بدون أي حقول شخصية.</li>
+      <li>أسفل المحرر، فعّل <strong>كلا الخيارين</strong>:
         <ul>
-          <li>✅ Set as default for new emails</li>
-          <li>✅ Use for reply / forward</li>
+          <li>✅ <span class="ltr">Set as default for new emails</span></li>
+          <li>✅ <span class="ltr">Use for reply / forward</span></li>
         </ul>
       </li>
-      <li>Click <strong>Save</strong>. Send yourself a test email to confirm it works.</li>
+      <li>اضغط <strong>Save</strong>. أرسل بريداً تجريبياً للتأكد.</li>
     </ol>
 
     <div class="alert red">
-      <strong>Critical:</strong> You MUST paste into the HTML/Source view (the <code>&lt; &gt;</code> button). If you paste into the normal editor, the signature will not work.
+      <strong>مهم جداً:</strong> يجب اللصق في عرض HTML / المصدر (زر <code>&lt; &gt;</code>). إذا لصقت في العرض العادي، لن يعمل التوقيع بشكل صحيح.
     </div>
 
     <div class="alert">
-      <strong>Forgetting "Use for reply/forward"?</strong> Your signature won't appear on replies — only brand new emails. Tick BOTH checkboxes.
+      <strong>نسيت تفعيل "Use for reply/forward"؟</strong> لن يظهر التوقيع في الردود — فقط في الرسائل الجديدة. فعّل كلا الخيارين.
     </div>
   </div>
 
-  <p class="footer">Tadawa · Internal Signature Setup · v3.0 · Questions? Contact IT Support.</p>
+  <p class="footer">Tadawa · التوقيع الموحد · v1.0 · للاستفسارات: تواصل مع IT Support</p>
 
 </div>
 
@@ -174,12 +192,8 @@
     &lt;/td&gt;
     &lt;td width="430" valign="middle" style="width:430px; padding:6px 0 6px 12px; font-family:Arial, Helvetica, sans-serif;"&gt;
 
-      &lt;p style="margin:0 0 2px 0; font-family:Arial, Helvetica, sans-serif;"&gt;
-        &lt;b&gt;&lt;span style="color:#1F2937; font-size:15pt;"&gt;[NAME]&lt;/span&gt;&lt;/b&gt;
-      &lt;/p&gt;
-
       &lt;p style="margin:0 0 8px 0; font-family:Arial, Helvetica, sans-serif;"&gt;
-        &lt;i&gt;&lt;span style="color:#0E5A66; font-size:10pt;"&gt;[JOB TITLE]&lt;/span&gt;&lt;/i&gt;
+        &lt;b&gt;&lt;span style="color:#1F2937; font-size:15pt;"&gt;Tadawa Healthcare&lt;/span&gt;&lt;/b&gt;
       &lt;/p&gt;
 
       &lt;p style="margin:0 0 2px 0; font-family:Arial, Helvetica, sans-serif;"&gt;
@@ -188,7 +202,7 @@
              width="14"
              height="14"
              style="display:inline-block; width:14px; height:14px; vertical-align:middle; border:0;"&gt;
-        &amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#333333; font-size:10pt;"&gt;[PHONE]&lt;/span&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style="color:#333333; font-size:10pt;"&gt;+962 79 338 1119&lt;/span&gt;
       &lt;/p&gt;
 
       &lt;p style="margin:0 0 2px 0; font-family:Arial, Helvetica, sans-serif;"&gt;
@@ -248,7 +262,7 @@ function copyCode() {
       document.execCommand('copy');
       showCopied();
     } catch (e) {
-      alert('Could not copy automatically. Please contact IT Support.');
+      alert('حدث خطأ في النسخ. يرجى التواصل مع IT Support.');
     }
     document.body.removeChild(temp);
   }
@@ -257,10 +271,10 @@ function copyCode() {
     const btn = document.getElementById('copyBtn');
     const txt = document.getElementById('btnText');
     btn.classList.add('copied');
-    txt.textContent = '✓ Copied! Now paste it in Zoho Mail';
+    txt.textContent = '✓ تم النسخ! الآن الصق في Zoho Mail';
     setTimeout(() => {
       btn.classList.remove('copied');
-      txt.textContent = 'Copy Signature Code';
+      txt.textContent = 'نسخ كود التوقيع';
     }, 4000);
   }
 }
